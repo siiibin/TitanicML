@@ -1,8 +1,8 @@
 # 🧠 Titanic Survival Prediction API (Flask + ML Model Deployment)
 
-This project is a simple Flask-based REST API that predicts Titanic survival outcomes using a trained machine learning model. The model uses three features: Pclass, Sex, and Age.
+This project is a simple **Flask-based REST API** that predicts Titanic survival outcomes using a trained machine learning model. The model uses three features: `Pclass`, `Sex`, and `Age`.
 
-The entire project runs locally using Python and Flask, and can be tested via Postman. The source code is version-controlled and hosted on **GitHub.
+The entire project runs **locally** using Python and Flask, and can be tested via **Postman**. The source code is version-controlled and hosted on **GitHub**.
 
 ---
 
@@ -19,25 +19,23 @@ The entire project runs locally using Python and Flask, and can be tested via Po
 
 ## 📁 Project Structure
 
-
+```
 .
 ├── app.py               # Flask API
 ├── titanic.pkl          # Trained ML model (pickled)
 ├── requirements.txt     # Python dependencies
-├── titanic.ipynb
 └── README.md
-
+```
 
 ---
 
 ## 🔍 Model Summary
-
-- Features Used: Pclass, Sex, Age
-- Preprocessing:
-  - Sex is label-encoded (0 = female, 1 = male)
-- Classifier: Logistic Regression
-- Training: Conducted in a Jupyter Notebook 
-- Model Format: Saved using pickle
+- **Features Used**: `Pclass`, `Sex`, `Age`
+- **Preprocessing**:
+  - `Sex` is label-encoded (0 = female, 1 = male)
+- **Classifier**: Logistic Regression
+- **Training**: Conducted in a Jupyter Notebook (not included)
+- **Model Format**: Saved using `pickle`
 
 ---
 
@@ -45,14 +43,14 @@ The entire project runs locally using Python and Flask, and can be tested via Po
 
 ### 1. Clone the Repository
 
-bash
+```bash
 git clone https://github.com/your-username/titanic-flask-api.git
 cd titanic-flask-api
-
+```
 
 ### 2. Set Up the Environment
 
-bash
+```bash
 # Optional: Create virtual environment
 python -m venv .venv
 source .venv/bin/activate   # For Linux/macOS
@@ -60,15 +58,15 @@ source .venv/bin/activate   # For Linux/macOS
 
 # Install dependencies
 pip install -r requirements.txt
-
+```
 
 ### 3. Run the Flask App
 
-bash
+```bash
 python app.py
+```
 
-
-API will be running at: http://127.0.0.1:5000/predict
+API will be running at: `http://127.0.0.1:5000/predict`
 
 ---
 
@@ -76,51 +74,60 @@ API will be running at: http://127.0.0.1:5000/predict
 
 ### Endpoint
 
-
+```
 POST /predict
-
+```
 
 ### Request JSON
 
-json
+```json
 {
   "Pclass": 3,
-  "Age": 22,
-  "Sex_male": 1
+  "Sex": 1,
+  "Age": 22
 }
-
+```
 
 ### Response JSON
 
-json
+```json
 {
   "survived": 0
 }
+```
 
-
-Where 0 = Did not survive, 1 = Survived.
+Where `0 = Did not survive`, `1 = Survived`.
 
 ---
 
 ## 🧪 Testing the API with Postman
 
 1. Open Postman.
-2. Create a new POST request to: http://127.0.0.1:5000/predict
-3. Go to Body > raw > select JSON.
+2. Create a new **POST** request to: `http://127.0.0.1:5000/predict`
+3. Go to **Body** > **raw** > select **JSON**.
 4. Paste the request body:
 
-json
+```json
 {
   "Pclass": 2,
-  "Age": 30,
-  "Sex_male": 0
+  "Sex": 0,
+  "Age": 30
 }
+```
 
-
-5. Click Send to get the prediction response.
+5. Click **Send** to get the prediction response.
 
 ---
 
+## ✅ .gitignore Suggestion
+
+```
+.venv/
+__pycache__/
+*.pkl
+```
+
+---
 
 ## 📄 License
 
@@ -130,7 +137,7 @@ MIT License. Free to use, modify, and share.
 
 ## 🙌 Acknowledgements
 
-- Titanic dataset from Github  
+- Titanic dataset from Kaggle  
 - scikit-learn  
 - Flask  
 - Postman
