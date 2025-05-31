@@ -20,7 +20,6 @@ The entire project runs **locally** using Python and Flask, and can be tested vi
 ## 📁 Project Structure
 
 ```
-.
 ├── app.py               # Flask API
 ├── titanic.pkl          # Trained ML model (pickled)
 ├── requirements.txt     # Python dependencies
@@ -137,7 +136,7 @@ MIT License. Free to use, modify, and share.
 
 ## 🙌 Acknowledgements
 
-- Titanic dataset from Kaggle  
+- Titanic dataset from Github  
 - scikit-learn  
 - Flask  
 - Postman
